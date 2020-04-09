@@ -1,0 +1,11 @@
+#!/bin/bash
+# Put this into /etc/ups
+echo Begin send... $1
+
+until (/usr/local/bin/telegram-send --stdin < $1)
+do
+    sleep 2
+done
+
+rm $1
+echo Send end. $1

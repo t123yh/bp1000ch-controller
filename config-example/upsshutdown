@@ -1,0 +1,4 @@
+#!/bin/bash
+# Put this into /lib/systemd/system-shutdown
+/usr/local/bin/ups_shutdown /etc/ups/config.toml
+

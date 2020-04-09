@@ -1,0 +1,9 @@
+# Put this into /etc/systemd/system
+[Unit]
+Description="UPS Monitor Timer"
+
+[Timer]
+OnCalendar=*:*:0/10
+
+[Install]
+WantedBy=timers.target 

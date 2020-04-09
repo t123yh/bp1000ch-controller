@@ -1,0 +1,11 @@
+# Put this into /etc/systemd/system
+[Unit]
+Description=UPS Monitor Service
+
+[Service]
+Type=oneshot
+KillMode=process
+ExecStart=/usr/local/bin/ups_monitor /etc/ups/config.toml
+
+[Install]
+WantedBy=default.target 

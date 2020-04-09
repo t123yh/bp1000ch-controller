@@ -1,0 +1,14 @@
+# Put this into /etc/ups
+
+serial = "/dev/ttyS1"
+status_file = "/etc/ups/status.toml"
+battery_low_threshold = 25.9
+battery_low_debounce = 3
+battery_critical_threshold = 23.0
+shutdown_delay_minutes = 0.2
+shutdown_recovery_minutes = 1
+
+print_log_command = ["systemd-run", "/etc/ups/send-message-file-and-delete"]
+graceful_shutdown_command = ["/usr/sbin/poweroff", "-p"]
+force_reboot_command = ["/usr/sbin/reboot", "-f"]
+
